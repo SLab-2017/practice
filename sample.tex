@@ -1,0 +1,64 @@
+%%%%%template.tex%%%%%
+% このtexファイルを使って資料を作成すること
+
+%%%%%ドキュメント種類の設定%%%%%
+\documentclass[a4j,10pt]{jsarticle}
+
+%%%%%使用するパッケージを設定%%%%%
+\usepackage{amsmath, amssymb}
+\usepackage{fancyhdr,lastpage}
+
+%%%%%ページ設定%%%%%
+\pagestyle{fancy}
+\lhead{}
+\rhead{}\renewcommand{\headrulewidth}{0.0pt}
+\cfoot{\thepage{}/{}\pageref{LastPage}}
+
+%%%%%タイトル表示設定%%%%%
+\makeatletter
+\renewcommand\maketitle{
+\begin{flushright}
+\begin{tabular}{r l}
+日付:&{\@date }\\
+名前:&{\@author }\\
+研究室:\\
+学生番号:&1331000\\
+範囲:&p.\ 0000--p.\ 9999
+\end{tabular}
+\end{flushright}
+}
+\makeatother
+\author{氏名}
+\date{日付と曜日}
+
+%%%%%節番号表示%%%%%
+\def\theequation{\thesection.\arabic{equation}}
+\makeatletter
+\@addtoreset{equation}{section}
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}
+    {1.0\Cvs \@plus.5\Cdp \@minus.2\Cdp}
+    {.1\Cvs \@plus.3\Cdp}
+    {\reset@font\sffamily\normalsize}
+    }
+\makeatother
+\setcounter{secnumdepth}{4}
+
+%%%%%ドキュメント作成開始%%%%%
+\begin{document}
+
+%%%%%タイトル表示%%%%%
+\maketitle
+
+%%%%%見出し設定%%%%%
+% 書籍の項目にあわせて入力すること
+\setcounter{section}{0}         
+\setcounter{subsection}{1}   
+\setcounter{subsubsection}{1}
+\setcounter{paragraph}{1}
+
+\section{タイトル}
+\subsection{タイトル}
+\subsubsection{タイトル}
+\paragraph{タイトル}
+%%%%%ドキュメント作成完了%%%%%
+\end{document}
